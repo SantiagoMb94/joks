@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Venta</title>
+    <!-- Enlaza el archivo CSS externo si es necesario -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Confirmación de Venta</h1>
+
+    <p>¡La venta se ha guardado exitosamente!</p>
+
+    <!-- Puedes mostrar detalles de la venta aquí si es necesario -->
+    <p>Detalles de la venta:</p>
+    <p>Precio: <span th:text="${venta.precio}"></span></p>
+    <p>Descuento: <span th:text="${venta.descuento}"></span></p>
+    <p>Total: <span th:text="${venta.total}"></span></p>
+
+    <a href="/vista/">Volver a la página principal</a>
+</div>
+</body>
+</html>

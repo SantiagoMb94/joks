@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMERS'JOK'S</title>
+    <!-- Enlaza el archivo CSS externo -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>GAMERS'JOK'S</h1>
+    <form th:action="@{/vista/guardarCliente}" method="post" th:object="${cliente}">
+
+        <label for="nombre">NOMBRE:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required><br>
+
+        <label for="cc">CC:</label>
+        <input type="text" id="cc" name="cc" th:field="*{cc}" required><br>
+
+
+        <label for="accesorios">ACCESORIOS:</label>
+        <select id="accesorios" name="accesorios" multiple required>
+            <!-- Opciones de accesorios generadas dinámicamente en el controlador -->
+            <option th:each="accesorio : ${accesoriosList}" th:value="${accesorio.id}" th:text="${accesorio.nombre}"></option>
+        </select><br>
+
+        <label for="juegos">JUEGO:</label>
+        <select id="juegos" name="juegos" multiple required>
+            <!-- Opciones de juegos generadas dinámicamente en el controlador -->
+            <option th:each="juego : ${juegosList}" th:value="${juego.id}" th:text="${juego.nombre}"></option>
+        </select><br>
+<!--
+        <label for="precio">PRECIO:</label>
+        <input type="text" id="precio" name="precio" th:field="*{venta.precio}" required><br>
+
+        <label for="descuento">DESCUENTO:</label>
+        <input type="text" id="descuento" name="descuento" th:field="*{venta.descuento}" required><br>
+
+        <label for="total">TOTAL:</label>
+        <input type="text" id="total" name="total" th:field="*{venta.total}" required><br>-->
+        <label for="precio">PRECIO:</label>
+        <input type="text" id="precio" name="precio" th:field="${venta.precio}" required><br>
+
+        <label for="descuento">DESCUENTO:</label>
+        <input type="text" id="descuento" name="descuento" th:field="${venta.descuento}" required><br>
+
+        <label for="total">TOTAL:</label>
+        <input type="text" id="total" name="total" th:field="${venta.total}" required><br>
+
+
+
+
+        <button type="submit">ENVIAR</button>
+        <button type="reset">LIMPIAR</button>
+
+    </form>
+
+    <a href="/vista/salir">SALIR</a>
+</div>
+</body>
+</html>
+
+

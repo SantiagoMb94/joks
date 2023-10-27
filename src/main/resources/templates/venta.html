@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Ventas</title>
+</head>
+<body>
+<h1>Listado de Ventas</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fecha de Venta</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="venta : ${ventasList}">
+        <td th:text="${venta.id}"></td>
+        <td th:text="${venta.nombre}"></td>
+        <td th:text="${venta.fechaVenta}"></td>
+        <td th:text="${venta.total}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/ventas/formulario">Agregar Venta</a>
+</body>
+</html>

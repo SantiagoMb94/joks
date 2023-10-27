@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Juegos</title>
+</head>
+<body>
+<h1>Listado de Juegos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="juego : ${juegosList}">
+        <td th:text="${juego.id}"></td>
+        <td th:text="${juego.nombre}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/juegos/formulario">Agregar Juego</a>
+</body>
+</html>

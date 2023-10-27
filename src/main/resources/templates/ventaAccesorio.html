@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Ventas de Accesorios</title>
+</head>
+<body>
+<h1>Listado de Ventas de Accesorios</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fecha de Venta</th>
+        <th>Precio</th>
+        <th>Descuento</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ventaAccesorio : ${ventaAccesoriosList}">
+        <td th:text="${ventaAccesorio.id}"></td>
+        <td th:text="${ventaAccesorio.nombre}"></td>
+        <td th:text="${ventaAccesorio.fechaVenta}"></td>
+        <td th:text="${ventaAccesorio.precio}"></td>
+        <td th:text="${ventaAccesorio.descuento}"></td>
+        <td th:text="${ventaAccesorio.total}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/venta-accesorios/formulario">Agregar Venta de Accesorio</a>
+</body>
+</html>
